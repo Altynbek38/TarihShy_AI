@@ -86,7 +86,7 @@ with st.sidebar:
                         index=8
                         )
     st.markdown("<p style='text-align: left; color: White;'> Чат-бот TarihShy AI с искусственным интеллектом предназначен для изучения истории Казахстана от имени известных личностей.Вы можете задать вопросы об истории Казахстана и личные вопросы историческим личностям. На данный момент чат-бот находится на ранней стадии тестирования, cобрана небольшая база данных и написана значительная часть чат-бота. Я хотел бы получить от вас обратную связь для улучшения и подготовки к основному приложению. Если бот дал неверный ответ или произошли другие ошибки, пожалуйста, отправьте свой идентификатор conversqtion_id мне в Telegram. </p>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: left; color: White;'>https://t.me/z_altynbek_q</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: left; color: White;'>Telegram: https://t.me/z_altynbek_q</p>", unsafe_allow_html=True)
 
 persist_directory_personality = "db_personality/shoqan"
 
