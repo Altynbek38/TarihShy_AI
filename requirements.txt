@@ -1,11 +1,6 @@
-streamlit
-wikipedia
-pandas
-langchain
-openai
-pandas
-numpy
-pymongo
-
-streamlit_chat
-dotenv
+langchain==0.0.225
+openai==0.27.7
+pymongo==4.3.3
+python-dotenv==1.0.0
+streamlit==1.24.0
+streamlit_chat==0.0.2.2
