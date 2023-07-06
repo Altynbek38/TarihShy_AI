@@ -7,3 +7,4 @@ pandas
 numpy
 pymongo
 streamlit_chat
+load_dotenv
