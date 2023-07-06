@@ -6,6 +6,6 @@ openai
 pandas
 numpy
 pymongo
+chromadb
 streamlit_chat
 dotenv
-chromadb
