@@ -12,6 +12,7 @@ from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from langchain import PromptTemplate
 from dotenv import load_dotenv
 from bson.objectid import ObjectId
+from langchain import OpenAI, VectorDBQA
 load_dotenv()
 st.markdown("<h1 style='text-align: center; color: White;'>TarihShy AI</h1>", unsafe_allow_html=True)
 
@@ -183,9 +184,12 @@ if len(openai_key):
         # print(7)
         # for doc in docs_tarih:
         #     main_content += doc.page_content + "\n\n"
+        vStore = Chroma.from_documents(docs, embedding)
+        model = VectorDBQA.from_chain_type(llm=OpenAI(), chain_type="stuff", vectorstore=vStore)
+
         print(8)
         messages.append(HumanMessage(content=main_content))
-        ai_response = chat(messages).content
+        ai_response = model.run(messages)
         print(9)
         messages.pop()
         messages.append(HumanMessage(content=user_query))
