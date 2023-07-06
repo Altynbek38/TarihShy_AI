@@ -17,7 +17,7 @@ st.markdown("<h1 style='text-align: center; color: White;'>TarihShy AI</h1>", un
 
 buff, col, buff2 = st.columns([1, 3, 1])
 
-openai_key = os.environ["OPENAI_API_KEY"]
+openai_key = st.secrets['OPENAI_API_KEY']
 openai.api_key = openai_key
 embedding = OpenAIEmbeddings()
 template = """
@@ -59,7 +59,7 @@ functions = [
 ]
 
 def mongo_client():
-    url = os.environ['MONGO_URL']
+    url = st.secrets['MONGO_URL']
     client = pymongo.MongoClient(url)
     return client
 
