@@ -8,3 +8,4 @@ numpy
 pymongo
 streamlit_chat
 dotenv
+chromadb
