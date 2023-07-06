@@ -123,7 +123,7 @@ persist_directory_tarih = "db"
 
 if len(openai_key):
 
-    chat = ChatOpenAI(temperature=0.4, openai_api_key=openai_key, model_name="text-davinci-003")
+    chat = ChatOpenAI(temperature=0.0, openai_api_key=openai_key, model_name="gpt-3.5-turbo-0613")
 
     if 'all_messages' not in st.session_state:
         st.session_state.all_messages = []
@@ -173,16 +173,16 @@ if len(openai_key):
         for doc in docs:
             main_content += doc.page_content + "\n\n"
         print(4)
-        # vectordb = Chroma(
-        #     persist_directory=persist_directory_tarih, embedding_function=embedding
-        # )
-        # print(5)
-        # retriever_tarih = vectordb.as_retriever()
-        # print(6)
-        # docs_tarih = retriever_tarih.get_relevant_documents("История коротко, " + user_query, )
-        # print(7)
-        # for doc in docs_tarih:
-        #     main_content += doc.page_content + "\n\n"
+        vectordb = Chroma(
+            persist_directory=persist_directory_tarih, embedding_function=embedding
+        )
+        print(5)
+        retriever_tarih = vectordb.as_retriever()
+        print(6)
+        docs_tarih = retriever_tarih.get_relevant_documents("История коротко, " + user_query, )
+        print(7)
+        for doc in docs_tarih:
+            main_content += doc.page_content + "\n\n"
         print(8)
         messages.append(HumanMessage(content=main_content))
         ai_response = chat(messages).content
@@ -258,7 +258,7 @@ if len(openai_key):
 
     messages = [
         SystemMessage(
-            content=f'You are {personality}. Answer questions with respect and accuracy. Answer only the question, if possible, and provide a brief response. To question "Кто Вы"answer shortly. Always answer in the first person. The answer is in Russian. Additionally, You have to provide you with more structural information about Kazakh history and renowned figures.'
+            content=f'You are {personality}. Answer questions with respect and accuracy. Answer only the question, if possible, and provide a brief response. To question "Кто Вы" or "Кто ты"answer shortly. Always answer in the first person. The answer is in Russian. Additionally, You have to provide you with more structural information about Kazakh history and renowned figures.'
         )
     ]
     # Create input text box for user to send messages
