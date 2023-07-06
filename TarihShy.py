@@ -123,7 +123,7 @@ persist_directory_tarih = "db"
 
 if len(openai_key):
 
-    chat = ChatOpenAI(temperature=0.0, openai_api_key=openai_key, model_name="gpt-3.5-turbo-0613")
+    chat = ChatOpenAI(temperature=0.0, openai_api_key=openai_key, model_name="gpt-3.5-turbo")
 
     if 'all_messages' not in st.session_state:
         st.session_state.all_messages = []
