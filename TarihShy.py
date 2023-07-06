@@ -173,16 +173,16 @@ if len(openai_key):
         for doc in docs:
             main_content += doc.page_content + "\n\n"
         print(4)
-        vectordb = Chroma(
-            persist_directory=persist_directory_tarih, embedding_function=embedding
-        )
-        print(5)
-        retriever_tarih = vectordb.as_retriever()
-        print(6)
-        docs_tarih = retriever_tarih.get_relevant_documents("История коротко, " + user_query, )
-        print(7)
-        for doc in docs_tarih:
-            main_content += doc.page_content + "\n\n"
+        # vectordb = Chroma(
+        #     persist_directory=persist_directory_tarih, embedding_function=embedding
+        # )
+        # print(5)
+        # retriever_tarih = vectordb.as_retriever()
+        # print(6)
+        # docs_tarih = retriever_tarih.get_relevant_documents("История коротко, " + user_query, )
+        # print(7)
+        # for doc in docs_tarih:
+        #     main_content += doc.page_content + "\n\n"
         print(8)
         messages.append(HumanMessage(content=main_content))
         ai_response = chat(messages).content
