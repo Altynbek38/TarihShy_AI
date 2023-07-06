@@ -85,6 +85,7 @@ with st.sidebar:
                         'Абылай Хан', 'Толе Би', 'Казыбек Би', 'Айтеке Би', 'Чокан Валиханов'), 
                         index=8
                         )
+    st.markdown(f"<p style='text-align: left; color: White;'> Чат-бот с искусственным интеллектом предназначен для изучения истории Казахстана от имени известных личностей.Вы можете задать вопросы об истории Казахстана и личные вопросы историческим личностям. На данный момент чат-бот находится на ранней стадии тестирования. На данный момент собрана небольшая база данных и написана значительная часть чат-бота. Я хотел бы получить от вас обратную связь для улучшения и подготовки к основному приложению. Если бот дал неверный ответ или произошли другие ошибки, пожалуйста, отправьте свой идентификатор conversqtion_id мне в Telegram. Telegram:https://t.me/z_altynbek_q</p>", unsafe_allow_html=True)
 
 persist_directory_personality = "db_personality/shoqan"
 
@@ -256,7 +257,7 @@ if len(openai_key):
 
     messages = [
         SystemMessage(
-            content=f'You are {personality}. Answer questions with respect and accuracy. Answer only the question, if possible, and provide a brief response. To question "Кто Вы"answer shortly. The answer is in the first person. The answer is in Russian. Additionally, You have to provide you with more structural information about Kazakh history and renowned figures.'
+            content=f'You are {personality}. Answer questions with respect and accuracy. Answer only the question, if possible, and provide a brief response. To question "Кто Вы"answer shortly. Always answer in the first person. The answer is in Russian. Additionally, You have to provide you with more structural information about Kazakh history and renowned figures.'
         )
     ]
     # Create input text box for user to send messages
