@@ -10,9 +10,8 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from langchain import PromptTemplate
-from dotenv import load_dotenv
 from bson.objectid import ObjectId
-load_dotenv()
+
 st.markdown("<h1 style='text-align: center; color: White;'>TarihShy AI</h1>", unsafe_allow_html=True)
 
 buff, col, buff2 = st.columns([1, 3, 1])
